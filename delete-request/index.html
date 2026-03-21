@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Deletion Request | BroRocks</title>
+    <meta name="description"
+        content="Submit a BroRocks account and data deletion request even if you have uninstalled the app.">
+    <link rel="icon" href="../favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .delete-page {
+            min-height: 100vh;
+            padding: 140px 24px 80px;
+        }
+
+        .delete-container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .delete-header {
+            margin-bottom: 40px;
+        }
+
+        .delete-header h1 {
+            font-family: var(--font-alt);
+            font-size: clamp(2rem, 4vw, 2.7rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .delete-meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .delete-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .delete-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 28px;
+        }
+
+        .delete-card h2 {
+            font-family: var(--font-alt);
+            font-size: 1.2rem;
+            margin-bottom: 14px;
+            color: var(--accent);
+        }
+
+        .delete-card p,
+        .delete-card li {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.75;
+        }
+
+        .delete-card ul {
+            padding-left: 22px;
+            margin: 10px 0 0;
+        }
+
+        .delete-form {
+            display: grid;
+            gap: 16px;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.84rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            letter-spacing: 0.01em;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: var(--bg2);
+            color: var(--text);
+            padding: 12px 14px;
+            font-family: var(--font-main);
+            font-size: 0.94rem;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: rgba(255, 107, 53, 0.65);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.15);
+        }
+
+        .help-text {
+            color: var(--text-muted);
+            font-size: 0.84rem;
+            line-height: 1.6;
+        }
+
+        .mailto-link {
+            color: var(--accent);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 32px;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .field-row {
+                grid-template-columns: 1fr;
+            }
+
+            .delete-card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar scrolled">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Bro<span>Rocks</span></a>
+        </div>
+    </nav>
+
+    <main class="delete-page">
+        <div class="delete-container">
+            <a href="../index.html" class="back-link">← Back to BroRocks</a>
+
+            <div class="delete-header">
+                <span class="section-tag">Account Support</span>
+                <h1>Data Deletion Request</h1>
+                <p class="delete-meta">Use this page to request deletion of your BroRocks app account and associated
+                    personal data, even if you already uninstalled the app.</p>
+            </div>
+
+            <div class="delete-grid">
+                <section class="delete-card">
+                    <h2>How this works</h2>
+                    <ul>
+                        <li>Submit the form below, or email us directly at <a class="mailto-link"
+                                href="mailto:contact@brorocks.com">contact@brorocks.com</a>.</li>
+                        <li>Include your account email and username so we can locate your data.</li>
+                        <li>We may ask for a quick ownership verification before deleting account data.</li>
+                        <li>Deletion requests are processed within 30 days.</li>
+                    </ul>
+                </section>
+
+                <section class="delete-card">
+                    <h2>What gets deleted</h2>
+                    <ul>
+                        <li>Account profile information (email, username, avatar).</li>
+                        <li>User-generated content tied to your account where deletion is supported.</li>
+                        <li>App activity data associated with your account.</li>
+                    </ul>
+                    <p style="margin-top: 12px;">Some records may be retained when required for security, fraud
+                        prevention, legal compliance, or dispute resolution.</p>
+                </section>
+
+                <section class="delete-card">
+                    <h2>Submit Request</h2>
+                    <form id="deletion-form" class="delete-form">
+                        <div class="field-row">
+                            <div>
+                                <label for="fullName">Full Name</label>
+                                <input id="fullName" name="fullName" type="text" autocomplete="name">
+                            </div>
+                            <div>
+                                <label for="email">Account Email <span aria-hidden="true">*</span></label>
+                                <input id="email" name="email" type="email" required autocomplete="email">
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <div>
+                                <label for="username">Username (if any)</label>
+                                <input id="username" name="username" type="text">
+                            </div>
+                            <div>
+                                <label for="appName">App Name <span aria-hidden="true">*</span></label>
+                                <input id="appName" name="appName" type="text" required value="This Or That">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="details">Additional Details</label>
+                            <textarea id="details" name="details"
+                                placeholder="Optional: add account ID, approximate sign-up date, or anything that helps us find your account faster."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create Email Request</button>
+                        <p class="help-text">Submitting opens your default email app with a prefilled deletion request.
+                            If it does not open, email us at <a class="mailto-link"
+                                href="mailto:contact@brorocks.com">contact@brorocks.com</a>.</p>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+                <span>© 2026 BroRocks. <a href="../privacy-policy.html" style="color: var(--accent);">Privacy
+                        Policy</a> &nbsp;|&nbsp; <a href="../terms.html" style="color: var(--accent);">Terms</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const deletionForm = document.getElementById('deletion-form');
+
+        deletionForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const fullName = document.getElementById('fullName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const username = document.getElementById('username').value.trim();
+            const appName = document.getElementById('appName').value.trim();
+            const details = document.getElementById('details').value.trim();
+
+            const subject = `Data Deletion Request - ${appName || 'BroRocks App'}`;
+            const bodyLines = [
+                'Hello BroRocks Team,',
+                '',
+                'I am requesting deletion of my account and associated personal data.',
+                '',
+                `Full Name: ${fullName || 'Not provided'}`,
+                `Account Email: ${email || 'Not provided'}`,
+                `Username: ${username || 'Not provided'}`,
+                `App Name: ${appName || 'Not provided'}`,
+                `Additional Details: ${details || 'None'}`,
+                '',
+                'Please confirm when this request is completed.',
+                '',
+                'Thank you.'
+            ];
+
+            const mailto = `mailto:contact@brorocks.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
+            window.location.href = mailto;
+        });
+    </script>
+</body>
+
+</html>
